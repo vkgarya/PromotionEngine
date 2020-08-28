@@ -23,5 +23,21 @@ namespace PromotionEngine.Test
             decimal finalPrice = cdProduct.GetPrice();
             Assert.AreEqual(30, finalPrice);
         }
+
+        [TestMethod]
+        public void GetPrice_CProductCount_1_DProductCount_1_Failure()
+        {
+            CDProduct cdProduct = new CDProduct
+            {
+                Products = new List<Product>
+                {
+                    new Product{ProductCount = 1, ProductName = "C" },
+                    new Product{ProductCount = 1, ProductName = "D" }
+                }
+            };
+
+            decimal finalPrice = cdProduct.GetPrice();
+            Assert.AreNotEqual(35, finalPrice);
+        }
     }
 }
