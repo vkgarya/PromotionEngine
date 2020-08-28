@@ -23,16 +23,16 @@ namespace PromotionEngine
             // Sceanario B => 5 A, 5 B, 1 C
             // Sceanario C => 3 A, 5 B, (1 C, 1 D)
 
-            // Here, Execution of Sceanario A => 1 A, 1 B, 1 C 
+            // Here, Execution of Sceanario B => 5 A, 5 B, 1 C 
             // Data Preparation
             AProduct aProduct = new AProduct
             {
-                ProductsCount = 1
+                ProductsCount = 5
             };
 
             BProduct bProduct = new BProduct
             {
-                ProductsCount = 1
+                ProductsCount = 5
             };
 
             CProduct cProduct = new CProduct
@@ -40,8 +40,8 @@ namespace PromotionEngine
                 ProductsCount = 1
             };
 
-            IEnumerable<IPromotion> orders = new List<IPromotion> { aProduct, bProduct, cProduct };  // 100
-            finalPrice = GetFinalPrice(orders);
+            IEnumerable<IPromotion> orders = new List<IPromotion> { aProduct, bProduct, cProduct };  
+            finalPrice = GetFinalPrice(orders); // 370
             Console.WriteLine($"Final Price - {finalPrice}");
             Console.Read();
         }
