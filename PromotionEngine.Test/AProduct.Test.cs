@@ -18,5 +18,17 @@ namespace PromotionEngine.Test
             decimal finalPrice = aProduct.GetPrice();
             Assert.AreEqual(130, finalPrice);
         }
+
+        [TestMethod]
+        public void GetPrice_ProductCount_3_Failure()
+        {
+            AProduct aProduct = new AProduct
+            {
+                ProductsCount = 3
+            };
+
+            decimal finalPrice = aProduct.GetPrice();
+            Assert.AreNotEqual(150, finalPrice);
+        }
     }
 }
