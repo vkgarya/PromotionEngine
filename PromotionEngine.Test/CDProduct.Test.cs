@@ -1,0 +1,25 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PromotionEngine.Services;
+
+namespace PromotionEngine.Test
+{
+    [TestClass]
+    public class CDProductTest
+    {
+        [TestMethod]
+        public void GetPrice_CProductCount_1_DProductCount_1_Success()
+        {
+            CDProduct cdProduct = new CDProduct
+            {
+                Products = new List<Product>
+                {
+                    new Product{ProductCount = 1, ProductName = "C" },
+                    new Product{ProductCount = 1, ProductName = "D" }
+                }
+            };
+
+            decimal finalPrice = cdProduct.GetPrice();
+            Assert.AreEqual(30, finalPrice);
+        }
+    }
+}
