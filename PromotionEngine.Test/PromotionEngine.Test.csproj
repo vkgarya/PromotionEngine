@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDProduct.Test.cs" />
+    <Compile Include="EProduct.Test.cs" />
     <Compile Include="DProduct.Test.cs" />
     <Compile Include="CProduct.Test.cs" />
     <Compile Include="BProduct.Test.cs" />
