@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DProduct.Test.cs" />
     <Compile Include="CProduct.Test.cs" />
     <Compile Include="BProduct.Test.cs" />
     <Compile Include="AProduct.Test.cs" />
