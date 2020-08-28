@@ -3,7 +3,7 @@ using PromotionEngine.Models;
 using PromotionEngine.Services;
 using System.Collections.Generic;
 
-namespace PromotionEngine.Test
+namespace PromotionEngine.Test.Services
 {
     [TestClass]
     public class CDProductTest

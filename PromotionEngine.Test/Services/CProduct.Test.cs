@@ -1,32 +1,33 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PromotionEngine.Services;
 
-namespace PromotionEngine.Test
+namespace PromotionEngine.Test.Services
 {
     [TestClass]
-    public class DProductTest
+    public class CProductTest
     {
         [TestMethod]
         public void GetPrice_ProductCount_3_Success()
         {
-            DProduct dProduct = new DProduct
+            CProduct cProduct = new CProduct
             {
                 ProductsCount = 3
             };
 
-            decimal finalPrice = dProduct.GetPrice();
-            Assert.AreEqual(45, finalPrice);
+            decimal finalPrice = cProduct.GetPrice();
+            Assert.AreEqual(60, finalPrice);
         }
+
 
         [TestMethod]
         public void GetPrice_ProductCount_3_Failure()
         {
-            DProduct dProduct = new DProduct
+            CProduct cProduct = new CProduct
             {
                 ProductsCount = 3
             };
 
-            decimal finalPrice = dProduct.GetPrice();
+            decimal finalPrice = cProduct.GetPrice();
             Assert.AreNotEqual(10, finalPrice);
         }
     }

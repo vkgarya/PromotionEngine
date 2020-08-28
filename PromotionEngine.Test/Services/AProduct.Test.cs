@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PromotionEngine.Services;
 
-namespace PromotionEngine.Test
+namespace PromotionEngine.Test.Services
 {
     [TestClass]
     public class AProductTest
