@@ -18,16 +18,12 @@ namespace PromotionEngine
 
             decimal finalPrice = 0M;
 
-            // Please run test cases of Program.Test.cs for below all scenarios 
-            // Sceanario A => 1 A, 1 B, 1 C
-            // Sceanario B => 5 A, 5 B, 1 C
-            // Sceanario C => 3 A, 5 B, (1 C, 1 D)
-
-            // Here, Execution of Sceanario B => 5 A, 5 B, 1 C 
+            // Please run test cases of Program.Test.cs for Sceanario A => 1 A, 1 B, 1 C, Sceanario B => 5 A, 5 B, 1 C
+            // Here, Execution of Sceanario C => 3 A, 5 B, (1 C, 1 D)
             // Data Preparation
             AProduct aProduct = new AProduct
             {
-                ProductsCount = 5
+                ProductsCount = 3
             };
 
             BProduct bProduct = new BProduct
@@ -35,13 +31,16 @@ namespace PromotionEngine
                 ProductsCount = 5
             };
 
-            CProduct cProduct = new CProduct
+            CDProduct cdProduct = new CDProduct
             {
-                ProductsCount = 1
+                Products = new List<Product>
+                {
+                    new Product{ ProductName = "C", ProductCount = 1},
+                    new Product{ ProductName = "D", ProductCount = 1}
+                }
             };
-
-            IEnumerable<IPromotion> orders = new List<IPromotion> { aProduct, bProduct, cProduct };  
-            finalPrice = GetFinalPrice(orders); // 370
+            IEnumerable<IPromotion> orders = new List<IPromotion> { aProduct, bProduct, cdProduct };  
+            finalPrice = GetFinalPrice(orders); // 280
             Console.WriteLine($"Final Price - {finalPrice}");
             Console.Read();
         }
